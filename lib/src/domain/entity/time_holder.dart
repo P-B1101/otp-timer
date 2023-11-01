@@ -16,20 +16,20 @@ class TimeHolder extends Equatable {
 
   factory TimeHolder.create(String id) => TimeHolder(
         id: id,
-        remainTime: Utils.timerDuration,
+        remainTime: OtpUtils.timerDuration,
         startDate: DateTime.now(),
       );
 
   TimeHolder startWithNewDuration() => TimeHolder(
         id: id,
         remainTime: () {
-          if (DateTime.now().isAfter(startDate.add(Utils.timerDuration))) {
-            return Utils.timerDuration;
+          if (DateTime.now().isAfter(startDate.add(OtpUtils.timerDuration))) {
+            return OtpUtils.timerDuration;
           }
           final value = DateTime.now().difference(startDate).inSeconds;
           return Duration(
               seconds: min(remainTime.inSeconds - value + 1,
-                  Utils.timerDuration.inSeconds));
+                  OtpUtils.timerDuration.inSeconds));
         }(),
         startDate: DateTime.now(),
       );

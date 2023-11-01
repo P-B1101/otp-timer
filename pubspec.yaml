@@ -1,6 +1,6 @@
 name: otp_timer
 description: A new Flutter package to simplify otp timer.
-version: 0.0.2
+version: 0.0.3
 homepage: http://10.154.65.32//front-flutter/otp-timer
 
 environment:
