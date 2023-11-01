@@ -1,5 +1,6 @@
 part of otp_timer;
 
+/// Use this widget as a root so bloc can work perfectly
 class OtpTimerWrapper extends StatelessWidget {
   final Widget child;
   const OtpTimerWrapper({

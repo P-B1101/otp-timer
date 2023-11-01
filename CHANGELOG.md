@@ -18,3 +18,4 @@ Update readme file.
 ## 0.0.5
 
 Update pubspec.yaml
+Add documentation

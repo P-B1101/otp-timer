@@ -14,10 +14,13 @@ part 'src/presentation/widget/otp_timer.dart';
 part 'src/presentation/widget/otp_timer_wrapper.dart';
 part 'src/utils/utils.dart';
 
+/// use this method to start timer with specific id.
+/// use multiple id for multiple timer at once.
 extension OtpTimerContextExt on BuildContext {
   void startTimer(String id) => read<TimerControllerCubit>().startTimer(id);
 }
 
+/// gives you typical timer format.
 extension OtpTimerDurationExt on Duration {
   String get toMinuteAndSecond {
     final data = inSeconds;

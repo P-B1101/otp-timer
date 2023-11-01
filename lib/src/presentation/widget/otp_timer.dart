@@ -2,6 +2,11 @@ part of otp_timer;
 
 typedef TimerWidgetBuilder = Widget Function(Duration remainTime);
 
+/// [id] use for handle events.
+///
+/// [builder] gives you [Duration] so you can show the remaining time.
+///
+/// [action] can be used to show action button that trigger start timer.
 class OtpTimer extends StatefulWidget {
   final String? id;
   final TimerWidgetBuilder builder;
