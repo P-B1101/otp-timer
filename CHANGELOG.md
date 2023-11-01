@@ -14,3 +14,7 @@ Make utils class public so timer duration can change dynamically.
 ## 0.0.4
 
 Update readme file.
+
+## 0.0.5
+
+Update pubspec.yaml
