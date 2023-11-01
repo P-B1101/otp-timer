@@ -2,12 +2,12 @@ part of otp_timer;
 
 typedef TimerWidgetBuilder = Widget Function(Duration remainTime);
 
-class TimerWidget extends StatefulWidget {
+class OtpTimer extends StatefulWidget {
   final String? id;
   final TimerWidgetBuilder builder;
   final Widget? action;
 
-  const TimerWidget({
+  const OtpTimer({
     super.key,
     required this.id,
     required this.builder,
@@ -15,10 +15,10 @@ class TimerWidget extends StatefulWidget {
   });
 
   @override
-  State<TimerWidget> createState() => _TimerWidgetState();
+  State<OtpTimer> createState() => _OtpTimerState();
 }
 
-class _TimerWidgetState extends State<TimerWidget> {
+class _OtpTimerState extends State<OtpTimer> {
   Timer? _timer;
 
   @override
@@ -30,7 +30,7 @@ class _TimerWidgetState extends State<TimerWidget> {
   }
 
   @override
-  void didUpdateWidget(covariant TimerWidget oldWidget) {
+  void didUpdateWidget(covariant OtpTimer oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.id != widget.id) {
       _addNewEventAndStart();

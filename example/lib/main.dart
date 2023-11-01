@@ -110,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TimerWidget(
+            OtpTimer(
               id: id,
               builder: (remainTime) => Text(remainTime.toMinuteAndSecond),
               action: TextButton(

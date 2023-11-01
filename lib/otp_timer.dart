@@ -12,8 +12,8 @@ import 'src/utils/utils.dart';
 part 'src/domain/entity/time_holder.dart';
 part 'src/presentation/cubit/timer_controller_cubit.dart';
 part 'src/presentation/cubit/timer_controller_state.dart';
-part 'src/presentation/widget/timer_widget.dart';
-part 'src/presentation/widget/timer_widget_wrapper.dart';
+part 'src/presentation/widget/otp_timer.dart';
+part 'src/presentation/widget/otp_timer_wrapper.dart';
 
 extension OtpTimerContextExt on BuildContext {
   void startTimer(String id) => read<TimerControllerCubit>().startTimer(id);
