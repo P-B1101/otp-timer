@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:otp_timer/otp_timer.dart';
 
@@ -59,8 +61,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   bool isLoading = false;
-  String? id = null;
+  String? id;
   void _startTimer() async {
+    OtpUtils.timerDuration = Duration(seconds: 10 + Random().nextInt(110));
     setState(() {
       isLoading = true;
     });
