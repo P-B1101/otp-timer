@@ -1,4 +1,4 @@
-part of otp_timer;
+part of '../../otp_timer.dart';
 
 class OtpUtils {
   const OtpUtils._();

@@ -1,4 +1,4 @@
-part of otp_timer;
+part of '../../../otp_timer.dart';
 
 class TimerControllerCubit extends Cubit<TimerControllerState> {
   TimerControllerCubit() : super(TimerControllerState.init());

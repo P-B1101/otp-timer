@@ -1,4 +1,4 @@
-part of otp_timer;
+part of '../../../otp_timer.dart';
 
 typedef TimerWidgetBuilder = Widget Function(Duration remainTime);
 

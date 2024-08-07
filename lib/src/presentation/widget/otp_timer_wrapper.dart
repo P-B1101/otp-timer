@@ -1,4 +1,4 @@
-part of otp_timer;
+part of '../../../otp_timer.dart';
 
 /// Use this widget as a root so bloc can work perfectly
 class OtpTimerWrapper extends StatelessWidget {

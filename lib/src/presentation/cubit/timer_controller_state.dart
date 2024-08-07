@@ -1,4 +1,4 @@
-part of otp_timer;
+part of '../../../otp_timer.dart';
 
 class TimerControllerState extends Equatable {
   final List<TimeHolder> events;
