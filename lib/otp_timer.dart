@@ -18,6 +18,8 @@ part 'src/utils/utils.dart';
 /// use multiple id for multiple timer at once.
 extension OtpTimerContextExt on BuildContext {
   void startTimer(String id) => read<TimerControllerCubit>().startTimer(id);
+
+  void stopTimer(String id) => read<TimerControllerCubit>().stopTimer(id);
 }
 
 /// gives you typical timer format.

@@ -20,4 +20,9 @@ class TimerControllerCubit extends Cubit<TimerControllerState> {
     final newState = state.addEvent(id);
     emit(newState.copyWith(startTimer: true));
   }
+
+  void stopTimer(String id) {
+    final newState = state.stopTimerEvent(id);
+    emit(newState.copyWith(stopTimer: true));
+  }
 }

@@ -77,6 +77,7 @@ class _OtpTimerState extends State<OtpTimer> {
           previous.startTimer != current.startTimer,
       listener: (context, state) {
         if (state.startTimer) _startTimer();
+        if (state.stopTimer) _stopTimer();
       },
       buildWhen: (previous, current) =>
           (previous.getDurationOf(widget.id ?? '') !=

@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:otp_timer/otp_timer.dart';
 
@@ -62,8 +60,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   bool isLoading = false;
   String? id;
+  bool _isStarted = false;
   void _startTimer() async {
-    OtpUtils.timerDuration = Duration(seconds: 10 + Random().nextInt(110));
+    OtpUtils.timerDuration = const Duration(seconds: 90);
     setState(() {
       isLoading = true;
     });
@@ -72,8 +71,13 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       isLoading = false;
       id = 'ABC';
+      _isStarted = !_isStarted;
     });
-    context.startTimer(id!);
+    if (_isStarted) {
+      context.startTimer(id!);
+    } else {
+      context.stopTimer(id!);
+    }
   }
 
   @override
@@ -113,18 +117,19 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            TextButton(
+              onPressed: isLoading ? null : _startTimer,
+              child: isLoading
+                  ? const Padding(
+                      padding: EdgeInsets.all(4),
+                      child: CircularProgressIndicator.adaptive(),
+                    )
+                  : Text(_isStarted ? 'Stop timer' : 'Start timer'),
+            ),
+            const SizedBox(height: 32),
             OtpTimer(
               id: id,
               builder: (remainTime) => Text(remainTime.toMinuteAndSecond),
-              action: TextButton(
-                onPressed: isLoading ? null : _startTimer,
-                child: isLoading
-                    ? const Padding(
-                        padding: EdgeInsets.all(4),
-                        child: CircularProgressIndicator.adaptive(),
-                      )
-                    : const Text('Start timer'),
-              ),
             ),
           ],
         ),

@@ -39,4 +39,10 @@ class TimeHolder extends Equatable {
         remainTime: remainTime - const Duration(seconds: 1),
         startDate: startDate,
       );
+
+  TimeHolder lastTick() => TimeHolder(
+        id: id,
+        remainTime: const Duration(seconds: 0),
+        startDate: startDate,
+      );
 }
